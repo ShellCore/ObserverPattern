@@ -113,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
     private void sendNotification(NotificationCompat.Style style) {
         NotificationCompat.Builder builder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setVibrate(new long[]{500, 500, 750})
                 .setStyle(style);
 
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
