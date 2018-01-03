@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Observer Pattern</string>
+    <string name="btn_save">Pedir bocadillo</string>
+    <string name="btn_charge">Consultar estado</string>
 </resources>

@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/default_margin"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context="com.shellcore.android.observerpattern.MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/btn_save"
+        android:textColor="@color/colorAccent" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_load"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/btn_charge"
+        android:textColor="@color/colorAccent" />
+
+</LinearLayout>
