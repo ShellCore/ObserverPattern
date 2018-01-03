@@ -1,6 +1,10 @@
 package com.shellcore.android.observerpattern;
 
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
@@ -36,10 +40,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendNotification(String message) {
+
+        Intent intent = new Intent(this, UserProfileActivity.class);
+
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(UserProfileActivity.class);
+        stackBuilder.addNextIntent(intent);
+
+        PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+
         NotificationCompat.Builder builder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("Sandwich Builder")
-                .setContentText(message);
+                .setContentText(message)
+                .setAutoCancel(true)
+                .setTicker("Los mejores bocadillos de la ciudad")
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.sandwich))
+                .setContentIntent(pendingIntent);
 
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
