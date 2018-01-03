@@ -2,4 +2,8 @@
     <string name="app_name">Observer Pattern</string>
     <string name="btn_save">Pedir bocadillo</string>
     <string name="btn_update">Consultar estado</string>
+    <string name="btn_text">Notificación con texto</string>
+    <string name="btn_image">Notificación con imagen</string>
+    <string name="btn_list">Notificación con lista</string>
+    <string name="btn_layout">Notificación con layout</string>
 </resources>
